@@ -1,8 +1,12 @@
 # Harrison Madu
 
+**Know what sold. What's in stock. Where the money went.**
+
 Full-stack developer. I build custom ERP, CRM, and inventory systems for businesses that are losing money to poor tracking, missing stock, and cash leakage.
 
 I design the interface, build the backend, and hand over a system a team can use daily: sales, stock, customers, and reports in one place.
+
+[Explore my portfolio](https://harrisonmadu.github.io/Portfolio/) · [Discuss your project](mailto:harrysoninno@gmail.com)
 
 ## What I build
 
@@ -11,6 +15,7 @@ I design the interface, build the backend, and hand over a system a team can use
 - ERP modules for operations and reporting
 - Dashboards for cash, sales, and performance
 - Web apps from frontend to backend
+- School-management interfaces and executive dashboards
 
 ## Stack
 
@@ -44,11 +49,42 @@ Implementation and integration work across order management, grouped product pri
 - **Stack:** React, TypeScript, NestJS, PostgreSQL, Prisma.
 - **Status:** In development.
 
+### School Management — executive dashboard concept
+
+[![SchoolOS executive concept with students, fee collection, pending fees, and sample payment records](docs/assets/projects/school-management-executive.png)](docs/assets/projects/school-management-executive.png)
+
+*Concept mockup with sample data; not a live school deployment.*
+
+- **Problem:** Give school leaders a clear view of student records, fees collected, outstanding balances, and academic administration.
+- **Proposed workflow:** Student record → fee/payment record → outstanding-fee overview, with access to report cards and parent communication.
+- **Focus:** Executive visibility, fee collection, student administration, and interface design.
+
+### RetailOS — retail operations concept
+
+[![RetailOS executive concept with sample branch sales, inventory, POS activity, and stock alerts](docs/assets/projects/retailos-executive.png)](docs/assets/projects/retailos-executive.png)
+
+*Concept mockup with sample data; not a live retail deployment.*
+
+- **Problem:** Connect sales activity with branch performance, stock availability, shrinkage, and approaching expiry dates.
+- **Proposed workflow:** Record a sale → update stock → surface low-stock or expiry alerts → review performance by branch.
+- **Focus:** Sales and POS, inventory, branch reporting, and interface design.
+
 ### More work
 
 - **CEO dashboard** — executive view of capital, burn, receivables, runway, and product performance, with widgets the user can show, hide, and reorder.
-- **Ad performance dashboard** — live ad reporting with Python, Streamlit, and Plotly.
+- **Ad performance dashboard** — interactive ad-reporting demo with sample data, built with Python, Streamlit, and Plotly.
 - **Buy&Use and SupremeLife** — UX case studies for conversion-focused product pages.
+
+## How we can work together
+
+1. **Understand the work:** Review your process, users, tools, and biggest pain points.
+2. **Agree the scope:** Define the screens, features, responsibilities, and priorities.
+3. **Build and review:** Review the interface and workflows as the system takes shape.
+4. **Test and hand over:** Check the agreed workflows and prepare documentation and handover.
+
+Features, integrations, data import, hosting, ownership, and support are agreed as part of the project scope.
+
+For a first conversation, share your business type, the workflow problem, key features, target date, and budget range if known.
 
 ## Contact
 
@@ -56,3 +92,4 @@ Implementation and integration work across order management, grouped product pri
 - GitHub: https://github.com/HarrisonMadu
 - LinkedIn: https://linkedin.com/in/harrisonmadu
 - X: [@smaldard](https://x.com/smaldard)
+- **Hire me on Fiverr:** Profile coming soon. For projects started on Fiverr, communication and payments stay on Fiverr.

@@ -3,149 +3,184 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Harrison Madu — Systems for stock, sales, and cash</title>
-  <style>
-    * { box-sizing: border-box; }
-    body { margin: 0; font-family: Georgia, serif; background: #f6f4ef; color: #1c1915; }
-    main { max-width: 1120px; margin: 0 auto; padding: 64px 24px 80px; }
-    p, li { line-height: 1.55; }
-    h1 { font-size: 2.4rem; margin: 0 0 8px; }
-    h2 { font-size: 1.15rem; margin: 40px 0 12px; }
-    .role { margin: 0 0 20px; color: #5c564c; }
-    a { color: #1f4d3a; }
-    .card { background: #fff; border: 1px solid #e4dfd4; border-radius: 12px; padding: 16px 18px; margin: 12px 0; }
-    .card h3 { margin: 0 0 6px; font-size: 1.05rem; }
-    .card p { margin: 0; }
-    .intro { max-width: 760px; }
-    .section-intro { max-width: 680px; color: #5c564c; }
-    .project { margin: 28px 0 40px; overflow: hidden; border: 1px solid #ded8cb; border-radius: 16px; background: #fffdf9; }
-    .project-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; padding: 24px 28px 20px; }
-    .project h3 { margin: 4px 0 8px; font-size: 1.7rem; }
-    .project-header p { margin: 0; max-width: 620px; }
-    .eyebrow, .status, .tags, figcaption, .image-link { font-family: Arial, sans-serif; }
-    .eyebrow { font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: #6c624d; }
-    .status { flex-shrink: 0; border: 1px solid #d8dfd6; border-radius: 999px; padding: 7px 11px; color: #335141; font-size: .73rem; white-space: nowrap; }
-    figure { margin: 0; padding: 0 20px; }
-    .screen { display: block; border: 1px solid #ded8cb; border-radius: 8px; overflow: hidden; background: #f6f4ef; }
-    .screen img { display: block; width: 100%; height: auto; }
-    .screen:focus-visible, a:focus-visible { outline: 3px solid #1f4d3a; outline-offset: 4px; }
-    figcaption { padding: 12px 8px 0; color: #72695b; font-size: .76rem; line-height: 1.5; }
-    .project-details { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; padding: 22px 28px 26px; }
-    .project-details h4 { margin: 0 0 8px; font-size: 1rem; }
-    .project-details p { margin: 0; font-size: .95rem; }
-    .tags { margin-top: 16px !important; color: #5d695e; font-size: .76rem !important; line-height: 1.8; }
-    .image-link { display: inline-block; margin-top: 14px; font-size: .8rem; }
-    .more-work { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
-    .more-work .card { margin: 0; }
-    @media (max-width: 680px) {
-      main { padding: 36px 18px 56px; }
-      h1 { font-size: 2.1rem; }
-      .project-header { flex-direction: column; padding: 20px; }
-      .project h3 { font-size: 1.45rem; }
-      figure { padding: 0 12px; }
-      .project-details { grid-template-columns: 1fr; gap: 20px; padding: 20px; }
-      .more-work { grid-template-columns: 1fr; }
-    }
-    footer { margin-top: 48px; color: #5c564c; }
-  </style>
+  <title>Harrison Madu — Custom CRM, inventory &amp; business software</title>
+  <meta name="description" content="Custom CRM, inventory, ERP and executive dashboards by Harrison Madu. Explore Dera Auto, SupreTek Suite CRM, school-management and RetailOS concepts, then discuss your project." />
+  <meta name="theme-color" content="#174d38" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Harrison Madu — Business systems built around your workflow" />
+  <meta property="og:description" content="Know what sold, what's in stock, and where the money went. Explore custom CRM, inventory and management-system work." />
+  <meta property="og:url" content="https://harrisonmadu.github.io/Portfolio/" />
+  <meta property="og:image" content="https://raw.githubusercontent.com/HarrisonMadu/Portfolio/main/docs/assets/projects/retailos-executive.png" />
+  <meta property="og:image:alt" content="RetailOS executive dashboard concept with sample sales, stock, and branch reporting data." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:creator" content="@smaldard" />
+  <link rel="canonical" href="https://harrisonmadu.github.io/Portfolio/" />
+  <link rel="stylesheet" href="assets/portfolio.css" />
 </head>
 <body>
-  <main>
-    <div class="intro">
-    <h1>Harrison Madu</h1>
-    <p class="role">Full-stack developer · Lagos</p>
-    <p>I build custom ERP, CRM, and inventory systems for businesses that are losing money to poor tracking, missing stock, and cash leakage.</p>
-    <p>I design the interface, build the backend, and hand over something a team can use daily.</p>
-    <h2>What I build</h2>
-    <ul>
-      <li>Inventory and stock systems</li>
-      <li>Custom CRM and client tracking</li>
-      <li>ERP modules for operations and reporting</li>
-      <li>Dashboards for cash, sales, and performance</li>
-      <li>Web apps from frontend to backend</li>
-    </ul>
-    </div>
-    <h2>Selected work</h2>
-    <p class="section-intro">A closer look at two business systems: the operational problem, the implementation, and the interface.</p>
-    <article class="project" id="dera-auto">
-      <div class="project-header">
-        <div>
-          <span class="eyebrow">Vehicle inventory &amp; operations</span>
-          <h3>Dera Auto</h3>
-          <p>A shared workspace for vehicle stock, import logistics, reservations, sales, and finance.</p>
-        </div>
-        <span class="status">Development build</span>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header wrap">
+    <a class="brand" href="#main"><span class="monogram" aria-hidden="true">HM</span> Harrison Madu</a>
+    <nav aria-label="Main navigation">
+      <a href="#work">Selected work</a><a href="#services">Services</a><a href="#process">Process</a><a href="#contact">Let's talk ↗</a>
+    </nav>
+  </header>
+  <main class="wrap" id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div>
+        <span class="eyebrow">Full-stack developer · Lagos, Nigeria</span>
+        <h1 id="hero-title">Know what sold.<br />What's in stock.<br /><em>Where the money went.</em></h1>
+        <p class="hero-copy">I build custom CRM, inventory, ERP, and reporting systems that bring your team's daily work into one place.</p>
+        <div class="actions"><a class="button" href="#contact">Discuss your project ↗</a><a class="button secondary" href="#work">Explore the work ↓</a></div>
+        <p class="hero-note">Interface design · Backend development · Business workflows</p>
       </div>
-      <figure>
-        <a class="screen" href="assets/projects/dera-auto-dashboard.png" aria-label="Open the Dera Auto dashboard mockup at full size">
-          <img src="assets/projects/dera-auto-dashboard.png" width="1587" height="991" alt="Dera Auto dashboard with inventory, commerce, operations, vehicle movement, and recent stock panels; sensitive values are masked." loading="lazy" decoding="async" />
-        </a>
-        <figcaption>Anonymized interface mockup based on the development build. Internal values and identifiers are masked. Select the image to view it at full size.</figcaption>
-      </figure>
-      <div class="project-details">
-        <div>
-          <h4>The operational problem</h4>
-          <p>A vehicle business needs to connect each unit's purchase, shipping, clearing, warehouse placement, and eventual sale with its costs and payments.</p>
+      <aside class="workflow" aria-label="Example connected business workflow">
+        <span class="eyebrow">Built around your workflow</span>
+        <h2>From daily activity<br />to a clear owner's view.</h2>
+        <ol>
+          <li><span class="step-dot">01</span><div><strong>Capture the work</strong><small>Orders, customers, stock, and payments.</small></div></li>
+          <li><span class="step-dot">02</span><div><strong>Connect the process</strong><small>Responsibilities, statuses, and approvals.</small></div></li>
+          <li><span class="step-dot">03</span><div><strong>See what needs attention</strong><small>Outstanding payments, stock gaps, and reports.</small></div></li>
+        </ol>
+      </aside>
+    </section>
+    <div class="capabilities" aria-label="Areas of work"><span>CRM &amp; ERP</span><span>Inventory &amp; retail</span><span>School management</span><span>Executive dashboards</span><span>Custom web applications</span></div>
+
+    <section class="section" id="work" aria-labelledby="work-title">
+      <div class="section-head">
+        <div><span class="eyebrow">See the thinking. See the interface.</span><h2 id="work-title">Selected work &amp; concepts</h2></div>
+        <p>Two development projects and two interface concepts. Explore the business problem, the workflow, and the details behind each screen.</p>
+      </div>
+      <div class="project-grid">
+        <article class="project" id="dera-auto">
+          <div class="project-top">
+            <div class="project-labels"><span class="project-category">Vehicle inventory &amp; operations</span><span class="status">Development build</span></div>
+            <h3>Dera Auto</h3><p>Follow each vehicle from purchase to warehouse to sale.</p>
+          </div>
+          <figure>
+            <a class="screen" href="assets/projects/dera-auto-dashboard.png" aria-label="View Dera Auto dashboard mockup at full size"><img src="assets/projects/dera-auto-dashboard.png" width="1587" height="991" alt="Dera Auto dashboard showing vehicle inventory, commerce, operations and movement panels with private values masked." loading="lazy" decoding="async" /></a>
+            <figcaption>Anonymized mockup based on the development build. Select the image to enlarge.</figcaption>
+          </figure>
+          <div class="project-body">
+            <p>Vehicle stock, import logistics, reservations, payments, and finance brought into a shared operational workspace.</p>
+            <div class="tags"><span>Next.js</span><span>React</span><span>TypeScript</span><span>PostgreSQL</span><span>Prisma</span></div>
+            <details><summary>Project details</summary>
+              <p><strong>The problem:</strong> Connect each vehicle's purchase, shipping, clearing, warehouse placement, and sale with its costs and payments.</p>
+              <p><strong>What I built:</strong> VIN-based stock records, movement tracking, reservations, payment and approval workflows, a vehicle media vault, and a customizable dashboard.</p>
+              <a href="assets/projects/dera-auto-dashboard.png">View full dashboard ↗</a>
+            </details>
+          </div>
+        </article>
+        <article class="project" id="supretek-suite">
+          <div class="project-top">
+            <div class="project-labels"><span class="project-category">CRM implementation &amp; integration</span><span class="status">In development</span></div>
+            <h3>SupreTek Suite CRM</h3><p>A connected view of orders, customers, and business performance.</p>
+          </div>
+          <figure>
+            <a class="screen" href="assets/projects/supretek-suite-dashboard.png" aria-label="View SupreTek Suite CRM dashboard mockup at full size"><img src="assets/projects/supretek-suite-dashboard.png" width="1505" height="1045" alt="SupreTek Suite CRM system overview with order widgets, reporting charts and service status; private values are masked." loading="lazy" decoding="async" /></a>
+            <figcaption>Anonymized mockup based on the development build. Select the image to enlarge.</figcaption>
+          </figure>
+          <div class="project-body">
+            <p>Implementation and integration work across order management, product pricing, customer records, and business reporting.</p>
+            <div class="tags"><span>React</span><span>TypeScript</span><span>NestJS</span><span>PostgreSQL</span><span>Prisma</span></div>
+            <details><summary>Project details</summary>
+              <p><strong>The problem:</strong> Give sales and operations teams a consistent view of their orders, customers, product offers, and reporting.</p>
+              <p><strong>My work:</strong> Connecting the existing CRM interface to a NestJS and PostgreSQL backend, with work on order status filters, pricing groups, customer records, and configurable dashboards.</p>
+              <a href="assets/projects/supretek-suite-dashboard.png">View full dashboard ↗</a>
+            </details>
+          </div>
+        </article>
+        <article class="project" id="school-management">
+          <div class="project-top">
+            <div class="project-labels"><span class="project-category">School management · Executive view</span><span class="status concept">Concept mockup</span></div>
+            <h3>School Management</h3><p>A school owner's view of students, fees, and academic administration.</p>
+          </div>
+          <figure>
+            <a class="screen" href="assets/projects/school-management-executive.png" aria-label="View School Management executive concept at full size"><img src="assets/projects/school-management-executive.png" width="1531" height="1027" alt="SchoolOS executive concept showing student numbers, collected and pending fees, report cards, and sample parent payments." loading="lazy" decoding="async" /></a>
+            <figcaption>Interface concept with sample data. This is a design mockup, not a live school deployment.</figcaption>
+          </figure>
+          <div class="project-body">
+            <p>A proposed executive workspace connecting student records, fee collection, pending payments, and report-card administration.</p>
+            <div class="tags"><span>Executive dashboard</span><span>Fees &amp; payments</span><span>Student records</span><span>UI concept</span></div>
+            <details><summary>Concept details</summary>
+              <p><strong>The problem:</strong> School leaders need a clear view of enrollment, fees collected, outstanding balances, and academic administration without searching across separate records.</p>
+              <p><strong>The proposed workflow:</strong> Student record → fee/payment record → outstanding-fee overview, with quick access to report cards and parent communication.</p>
+              <a href="assets/projects/school-management-executive.png">View executive mockup ↗</a>
+            </details>
+          </div>
+        </article>
+        <article class="project" id="retailos">
+          <div class="project-top">
+            <div class="project-labels"><span class="project-category">Retail operations · Branch reporting</span><span class="status concept">Concept mockup</span></div>
+            <h3>RetailOS</h3><p>Sales, stock, and branch performance in one executive view.</p>
+          </div>
+          <figure>
+            <a class="screen" href="assets/projects/retailos-executive.png" aria-label="View RetailOS executive concept at full size"><img src="assets/projects/retailos-executive.png" width="1531" height="1027" alt="RetailOS executive concept with sample branch sales, POS activity, stock levels, expiry alerts and retail performance indicators." loading="lazy" decoding="async" /></a>
+            <figcaption>Interface concept with sample data. This is a design mockup, not a live retail deployment.</figcaption>
+          </figure>
+          <div class="project-body">
+            <p>A proposed retail operations dashboard for understanding daily sales, comparing branches, and spotting stock that needs attention.</p>
+            <div class="tags"><span>Sales &amp; POS</span><span>Inventory</span><span>Branch reporting</span><span>UI concept</span></div>
+            <details><summary>Concept details</summary>
+              <p><strong>The problem:</strong> A retailer needs to connect sales activity with branch performance, inventory availability, shrinkage, and approaching expiry dates.</p>
+              <p><strong>The proposed workflow:</strong> Record a sale → update stock → surface low-stock or expiry alerts → review performance by branch.</p>
+              <a href="assets/projects/retailos-executive.png">View executive mockup ↗</a>
+            </details>
+          </div>
+        </article>
+      </div>
+      <p class="other-work"><strong>More work:</strong> CEO dashboards · <a href="https://github.com/HarrisonMadu/Portfolio/tree/main/projects/ad-dashboard">Ad performance dashboard ↗</a> · <a href="https://github.com/HarrisonMadu/Portfolio/tree/main/projects/landing-page-ab-test-buyuse">Buy&amp;Use UX study ↗</a> · <a href="https://github.com/HarrisonMadu/Portfolio/tree/main/projects/landing-page-ab-test-supremelife">SupremeLife UX study ↗</a></p>
+    </section>
+
+    <section class="section" id="services" aria-labelledby="services-title">
+      <div class="section-head"><div><span class="eyebrow">What we can build together</span><h2 id="services-title">Start with the problem.</h2></div><p>Choose the workflow you need to improve. The features and scope follow from that.</p></div>
+      <div class="services">
+        <div class="service"><span class="service-number">01 / STOCK &amp; SALES</span><h3>Inventory &amp; retail systems</h3><p>For businesses that need a clearer picture of what is available, moving, or missing.</p><ul><li>Stock records and movement tracking</li><li>Orders, sales, and payment status</li><li>Branch views and low-stock alerts</li></ul></div>
+        <div class="service"><span class="service-number">02 / CUSTOMERS &amp; OPERATIONS</span><h3>CRM &amp; business workflows</h3><p>For teams whose customer history, order updates, and follow-ups live in too many places.</p><ul><li>Customer records and follow-up stages</li><li>Assignments, access, and approvals</li><li>Connected operational reporting</li></ul></div>
+        <div class="service"><span class="service-number">03 / MANAGEMENT &amp; REPORTING</span><h3>Executive &amp; school dashboards</h3><p>For owners and administrators who need useful answers from their day-to-day records.</p><ul><li>Sales, cash, and outstanding balances</li><li>School records and fee visibility</li><li>Filters, reports, and exports</li></ul></div>
+      </div>
+    </section>
+
+    <section class="section" id="process" aria-labelledby="process-title">
+      <div class="section-head"><div><span class="eyebrow">A clear way to work</span><h2 id="process-title">From workflow to working software.</h2></div></div>
+      <ol class="process">
+        <li><span class="service-number">01</span><strong>Understand the work</strong><p>Walk through your current process, pain points, users, and existing tools.</p></li>
+        <li><span class="service-number">02</span><strong>Agree the scope</strong><p>Define the screens, features, responsibilities, and priorities before development.</p></li>
+        <li><span class="service-number">03</span><strong>Build &amp; review</strong><p>Review the interface and business workflows as the system takes shape.</p></li>
+        <li><span class="service-number">04</span><strong>Test &amp; hand over</strong><p>Check the agreed workflows and prepare the documentation and handover.</p></li>
+      </ol>
+      <p class="scope-note">Features, integrations, data import, hosting, ownership, and support are agreed as part of the project scope.</p>
+    </section>
+
+    <section class="section faq" aria-labelledby="faq-title">
+      <div class="section-head"><div><span class="eyebrow">Before we start</span><h2 id="faq-title">A few useful answers.</h2></div></div>
+      <details><summary>Can we start with one module?</summary><p>Yes. We can scope the most useful starting point—such as inventory, order tracking, or an executive dashboard—and plan further modules around it.</p></details>
+      <details><summary>Can an existing spreadsheet or system be part of the project?</summary><p>We can review your current files and tools, then decide what data import or integration belongs in the scope. You can begin by describing the structure; there is no need to send sensitive records in a first message.</p></details>
+      <details><summary>How are cost and timeline decided?</summary><p>They depend on the workflows, number of users and branches, integrations, data migration, and required features. Share your main problem and target date so we can define a realistic scope.</p></details>
+    </section>
+
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <div>
+        <span class="eyebrow">Have a workflow that needs fixing?</span>
+        <h2 id="contact-title">Let's make your next system useful.</h2>
+        <p>Tell me what your business does, what is difficult today, and what you need the system to handle.</p>
+        <div class="actions">
+          <a class="button" href="mailto:harrysoninno@gmail.com?subject=Custom%20business%20system%20enquiry&amp;body=Business%20type%3A%0AWorkflow%20or%20problem%3A%0AFeatures%20needed%3A%0ATarget%20date%3A%0ABudget%20range%20(optional)%3A">Discuss your project ↗</a>
+          <a class="button secondary" href="https://x.com/smaldard">Find me on X ↗</a>
         </div>
-        <div>
-          <h4>What I built</h4>
-          <p>VIN-based stock records, movement tracking, reservations, payment and approval workflows, and a vehicle media vault, brought together through a customizable dashboard.</p>
-          <p class="tags">Next.js · React · TypeScript · PostgreSQL · Prisma</p>
-          <a class="image-link" href="assets/projects/dera-auto-dashboard.png">View dashboard mockup ↗</a>
+        <a class="email" href="mailto:harrysoninno@gmail.com">harrysoninno@gmail.com</a>
+      </div>
+      <div>
+        <h4>A useful first message includes:</h4>
+        <ul class="contact-list"><li>Your business type and current process</li><li>The biggest tracking or workflow problem</li><li>The key features and users involved</li><li>Your target date and budget range, if known</li></ul>
+        <div class="fiverr-row">
+          <button class="button" type="button" disabled aria-describedby="fiverr-status">Hire me on Fiverr</button>
+          <span class="coming-soon" id="fiverr-status">Profile coming soon</span>
+          <p class="platform-note">For projects started on Fiverr, communication and payments stay on Fiverr.</p>
         </div>
       </div>
-    </article>
-    <article class="project" id="supretek-suite">
-      <div class="project-header">
-        <div>
-          <span class="eyebrow">CRM implementation &amp; integration</span>
-          <h3>SupreTek Suite CRM</h3>
-          <p>Order management, product pricing, customer records, and business reporting in a connected operations platform.</p>
-        </div>
-        <span class="status">In development</span>
-      </div>
-      <figure>
-        <a class="screen" href="assets/projects/supretek-suite-dashboard.png" aria-label="Open the SupreTek Suite CRM dashboard mockup at full size">
-          <img src="assets/projects/supretek-suite-dashboard.png" width="1505" height="1045" alt="SupreTek Suite CRM system overview with revenue and order widgets, weekly summaries, service status, and reporting charts; sensitive values are masked." loading="lazy" decoding="async" />
-        </a>
-        <figcaption>Anonymized interface mockup based on the development build. Internal values and identifiers are masked. Select the image to view it at full size.</figcaption>
-      </figure>
-      <div class="project-details">
-        <div>
-          <h4>The operational problem</h4>
-          <p>Sales and operations teams need a consistent view of orders, customers, product offers, and financial reporting across their daily workflow.</p>
-        </div>
-        <div>
-          <h4>My implementation work</h4>
-          <p>Connecting the existing CRM interface to a NestJS and PostgreSQL backend, with work across order status filters, grouped product pricing, customer records, and configurable business dashboards.</p>
-          <p class="tags">React · TypeScript · NestJS · PostgreSQL · Prisma</p>
-          <a class="image-link" href="assets/projects/supretek-suite-dashboard.png">View dashboard mockup ↗</a>
-        </div>
-      </div>
-    </article>
-    <h2>More work</h2>
-    <div class="more-work">
-    <div class="card">
-      <h3>CEO dashboard</h3>
-      <p>Executive view of capital, burn, receivables, runway, and product performance. Widgets can be shown, hidden, and reordered.</p>
-    </div>
-    <div class="card">
-      <h3>Ad performance dashboard</h3>
-      <p>Live ad reporting built with Python, Streamlit, and Plotly.</p>
-    </div>
-    <div class="card">
-      <h3>Product UX case studies</h3>
-      <p>Buy&amp;Use and SupremeLife: conversion-focused page and journey redesigns.</p>
-    </div>
-    </div>
-    <h2>Stack</h2>
-    <p>Next.js, React, Node.js, TypeScript, PostgreSQL, SQL, Python, Power BI.</p>
-    <footer>
-      <p>Email: <a href="mailto:harrysoninno@gmail.com">harrysoninno@gmail.com</a></p>
-      <a href="https://github.com/HarrisonMadu">GitHub</a>
-      · <a href="https://linkedin.com/in/harrisonmadu">LinkedIn</a>
-      · <a href="https://x.com/smaldard">X: @smaldard</a>
-    </footer>
+    </section>
   </main>
+  <footer class="site-footer wrap"><p>Harrison Madu · Full-stack development &amp; business systems</p><div><a href="https://github.com/HarrisonMadu">GitHub</a><a href="https://linkedin.com/in/harrisonmadu">LinkedIn</a><a href="https://x.com/smaldard">@smaldard</a></div></footer>
 </body>
 </html>
