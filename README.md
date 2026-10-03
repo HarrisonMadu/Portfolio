@@ -52,6 +52,7 @@ Implementation and integration work across order management, grouped product pri
 
 ## Contact
 
+- Email: [harrysoninno@gmail.com](mailto:harrysoninno@gmail.com)
 - GitHub: https://github.com/HarrisonMadu
 - LinkedIn: https://linkedin.com/in/harrisonmadu
-- X: https://x.com/smaldard
+- X: [@smaldard](https://x.com/smaldard)
