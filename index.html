@@ -7,7 +7,7 @@
   <style>
     * { box-sizing: border-box; }
     body { margin: 0; font-family: Georgia, serif; background: #f6f4ef; color: #1c1915; }
-    main { max-width: 760px; margin: 0 auto; padding: 64px 24px 80px; }
+    main { max-width: 1120px; margin: 0 auto; padding: 64px 24px 80px; }
     p, li { line-height: 1.55; }
     h1 { font-size: 2.4rem; margin: 0 0 8px; }
     h2 { font-size: 1.15rem; margin: 40px 0 12px; }
@@ -16,11 +16,42 @@
     .card { background: #fff; border: 1px solid #e4dfd4; border-radius: 12px; padding: 16px 18px; margin: 12px 0; }
     .card h3 { margin: 0 0 6px; font-size: 1.05rem; }
     .card p { margin: 0; }
+    .intro { max-width: 760px; }
+    .section-intro { max-width: 680px; color: #5c564c; }
+    .project { margin: 28px 0 40px; overflow: hidden; border: 1px solid #ded8cb; border-radius: 16px; background: #fffdf9; }
+    .project-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; padding: 24px 28px 20px; }
+    .project h3 { margin: 4px 0 8px; font-size: 1.7rem; }
+    .project-header p { margin: 0; max-width: 620px; }
+    .eyebrow, .status, .tags, figcaption, .image-link { font-family: Arial, sans-serif; }
+    .eyebrow { font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: #6c624d; }
+    .status { flex-shrink: 0; border: 1px solid #d8dfd6; border-radius: 999px; padding: 7px 11px; color: #335141; font-size: .73rem; white-space: nowrap; }
+    figure { margin: 0; padding: 0 20px; }
+    .screen { display: block; border: 1px solid #ded8cb; border-radius: 8px; overflow: hidden; background: #f6f4ef; }
+    .screen img { display: block; width: 100%; height: auto; }
+    .screen:focus-visible, a:focus-visible { outline: 3px solid #1f4d3a; outline-offset: 4px; }
+    figcaption { padding: 12px 8px 0; color: #72695b; font-size: .76rem; line-height: 1.5; }
+    .project-details { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; padding: 22px 28px 26px; }
+    .project-details h4 { margin: 0 0 8px; font-size: 1rem; }
+    .project-details p { margin: 0; font-size: .95rem; }
+    .tags { margin-top: 16px !important; color: #5d695e; font-size: .76rem !important; line-height: 1.8; }
+    .image-link { display: inline-block; margin-top: 14px; font-size: .8rem; }
+    .more-work { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .more-work .card { margin: 0; }
+    @media (max-width: 680px) {
+      main { padding: 36px 18px 56px; }
+      h1 { font-size: 2.1rem; }
+      .project-header { flex-direction: column; padding: 20px; }
+      .project h3 { font-size: 1.45rem; }
+      figure { padding: 0 12px; }
+      .project-details { grid-template-columns: 1fr; gap: 20px; padding: 20px; }
+      .more-work { grid-template-columns: 1fr; }
+    }
     footer { margin-top: 48px; color: #5c564c; }
   </style>
 </head>
 <body>
   <main>
+    <div class="intro">
     <h1>Harrison Madu</h1>
     <p class="role">Full-stack developer · Lagos</p>
     <p>I build custom ERP, CRM, and inventory systems for businesses that are losing money to poor tracking, missing stock, and cash leakage.</p>
@@ -33,7 +64,67 @@
       <li>Dashboards for cash, sales, and performance</li>
       <li>Web apps from frontend to backend</li>
     </ul>
+    </div>
     <h2>Selected work</h2>
+    <p class="section-intro">A closer look at two business systems: the operational problem, the implementation, and the interface.</p>
+    <article class="project" id="dera-auto">
+      <div class="project-header">
+        <div>
+          <span class="eyebrow">Vehicle inventory &amp; operations</span>
+          <h3>Dera Auto</h3>
+          <p>A shared workspace for vehicle stock, import logistics, reservations, sales, and finance.</p>
+        </div>
+        <span class="status">Development build</span>
+      </div>
+      <figure>
+        <a class="screen" href="docs/assets/projects/dera-auto-dashboard.png" aria-label="Open the Dera Auto dashboard mockup at full size">
+          <img src="docs/assets/projects/dera-auto-dashboard.png" width="1587" height="991" alt="Dera Auto dashboard with inventory, commerce, operations, vehicle movement, and recent stock panels; sensitive values are masked." loading="lazy" decoding="async" />
+        </a>
+        <figcaption>Anonymized interface mockup based on the development build. Internal values and identifiers are masked. Select the image to view it at full size.</figcaption>
+      </figure>
+      <div class="project-details">
+        <div>
+          <h4>The operational problem</h4>
+          <p>A vehicle business needs to connect each unit's purchase, shipping, clearing, warehouse placement, and eventual sale with its costs and payments.</p>
+        </div>
+        <div>
+          <h4>What I built</h4>
+          <p>VIN-based stock records, movement tracking, reservations, payment and approval workflows, and a vehicle media vault, brought together through a customizable dashboard.</p>
+          <p class="tags">Next.js · React · TypeScript · PostgreSQL · Prisma</p>
+          <a class="image-link" href="docs/assets/projects/dera-auto-dashboard.png">View dashboard mockup ↗</a>
+        </div>
+      </div>
+    </article>
+    <article class="project" id="supretek-suite">
+      <div class="project-header">
+        <div>
+          <span class="eyebrow">CRM implementation &amp; integration</span>
+          <h3>SupreTek Suite CRM</h3>
+          <p>Order management, product pricing, customer records, and business reporting in a connected operations platform.</p>
+        </div>
+        <span class="status">In development</span>
+      </div>
+      <figure>
+        <a class="screen" href="docs/assets/projects/supretek-suite-dashboard.png" aria-label="Open the SupreTek Suite CRM dashboard mockup at full size">
+          <img src="docs/assets/projects/supretek-suite-dashboard.png" width="1505" height="1045" alt="SupreTek Suite CRM system overview with revenue and order widgets, weekly summaries, service status, and reporting charts; sensitive values are masked." loading="lazy" decoding="async" />
+        </a>
+        <figcaption>Anonymized interface mockup based on the development build. Internal values and identifiers are masked. Select the image to view it at full size.</figcaption>
+      </figure>
+      <div class="project-details">
+        <div>
+          <h4>The operational problem</h4>
+          <p>Sales and operations teams need a consistent view of orders, customers, product offers, and financial reporting across their daily workflow.</p>
+        </div>
+        <div>
+          <h4>My implementation work</h4>
+          <p>Connecting the existing CRM interface to a NestJS and PostgreSQL backend, with work across order status filters, grouped product pricing, customer records, and configurable business dashboards.</p>
+          <p class="tags">React · TypeScript · NestJS · PostgreSQL · Prisma</p>
+          <a class="image-link" href="docs/assets/projects/supretek-suite-dashboard.png">View dashboard mockup ↗</a>
+        </div>
+      </div>
+    </article>
+    <h2>More work</h2>
+    <div class="more-work">
     <div class="card">
       <h3>CEO dashboard</h3>
       <p>Executive view of capital, burn, receivables, runway, and product performance. Widgets can be shown, hidden, and reordered.</p>
@@ -45,6 +136,7 @@
     <div class="card">
       <h3>Product UX case studies</h3>
       <p>Buy&amp;Use and SupremeLife: conversion-focused page and journey redesigns.</p>
+    </div>
     </div>
     <h2>Stack</h2>
     <p>Next.js, React, Node.js, TypeScript, PostgreSQL, SQL, Python, Power BI.</p>
