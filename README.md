@@ -51,7 +51,7 @@ Implementation and integration work across order management, grouped product pri
 
 ### Rock Foundation College — school management system
 
-[![Rock Foundation College school management dashboard with students, fee collection, pending fees, and sample payment records](docs/assets/projects/school-management-executive.png)](docs/assets/projects/school-management-executive.png)
+[![Rock Foundation College school management dashboard with students, fee collection, pending fees, and sample payment records](docs/assets/projects/rock-foundation-college-dashboard.png)](docs/assets/projects/rock-foundation-college-dashboard.png)
 
 *Anonymized interface mockup based on the development build. Sample data is used.*
 
@@ -62,7 +62,7 @@ Implementation and integration work across order management, grouped product pri
 
 ### Buy and Use — retail operations system
 
-[![Buy and Use retail operations dashboard with sample branch sales, inventory, POS activity, and stock alerts](docs/assets/projects/retailos-executive.png)](docs/assets/projects/retailos-executive.png)
+[![Buy and Use retail operations dashboard with sample branch sales, inventory, POS activity, and stock alerts](docs/assets/projects/buy-and-use-dashboard.png)](docs/assets/projects/buy-and-use-dashboard.png)
 
 *Anonymized interface mockup based on the development build. Sample data is used.*
 
