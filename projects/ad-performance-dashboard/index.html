@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <title>Ad Performance Dashboard case study | Harrison Madu</title>
+      <meta name="description" content="An interactive Python reporting application that turns campaign exports into clear performance analysis." />
+      <meta name="theme-color" content="#174d38" />
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content="Ad Performance Dashboard case study | Harrison Madu" />
+      <meta property="og:description" content="An interactive Python reporting application that turns campaign exports into clear performance analysis." />
+      <meta property="og:url" content="https://harrisonmadu.github.io/Portfolio/projects/ad-performance-dashboard/" />
+      <link rel="canonical" href="https://harrisonmadu.github.io/Portfolio/projects/ad-performance-dashboard/" />
+      <link rel="stylesheet" href="../../docs/assets/portfolio.css" />
+      <link rel="stylesheet" href="../../docs/assets/case-study.css" />
+    </head>
+    <body>
+      <a class="skip-link" href="#case-main">Skip to case study</a>
+      <header class="site-header wrap">
+        <a class="brand" href="/Portfolio/"><span class="monogram" aria-hidden="true">HM</span> Harrison Madu</a>
+        <nav aria-label="Case study navigation">
+          <a href="/Portfolio/#work">Selected work</a>
+          <a href="/Portfolio/#services">Services</a>
+          <a href="/Portfolio/#contact">Contact</a>
+        </nav>
+      </header>
+
+      <main class="wrap case-main" id="case-main">
+        <a class="back-link" href="/Portfolio/#more-work">← Back to additional work</a>
+
+        <section class="case-hero">
+          <div class="case-hero-copy">
+            <span class="eyebrow">PYTHON · ANALYTICS APPLICATION</span>
+            <div class="case-badges"><span>Interactive build</span><span>Advertising analytics</span></div>
+            <h1>Ad Performance Dashboard</h1>
+            <p class="case-summary">An interactive Python reporting application that turns campaign exports into clear performance analysis.</p>
+            <div class="actions">
+              <a class="button" href="mailto:dardtechsystems@outlook.com?subject=Ad%20Performance%20Dashboard%20project%20enquiry">Discuss a similar build ↗</a>
+              <a class="button secondary" href="/Portfolio/#work">View all work</a>
+            </div>
+          </div>
+          <div class="case-visual" aria-label="Illustrative interface preview">
+            <div class="visual-window">
+  <div class="visual-toolbar"><strong>Campaign performance</strong><span>Channel · date · campaign</span></div>
+  <div class="visual-metrics compact">
+    <div class="visual-metric"><small>Ad spend</small><b>••••••</b><i>Selected range</i></div>
+    <div class="visual-metric"><small>Revenue</small><b>••••••</b><i>Attributed</i></div>
+    <div class="visual-metric"><small>ROAS</small><b>••.••x</b><i>Blended</i></div>
+  </div>
+  <div class="visual-grid ads-grid">
+    <div class="visual-panel">
+      <div class="visual-panel-head"><strong>Spend vs return</strong><span>Interactive</span></div>
+      <div class="line-chart" aria-hidden="true"><svg viewBox="0 0 400 150" role="img"><polyline points="0,120 55,95 110,105 165,65 220,78 275,35 330,48 400,18" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/><polyline points="0,132 55,126 110,116 165,108 220,94 275,87 330,70 400,61" fill="none" stroke="currentColor" stroke-opacity=".35" stroke-width="6" stroke-linecap="round"/></svg></div>
+    </div>
+    <div class="visual-panel visual-list">
+      <div class="visual-panel-head"><strong>Campaigns</strong><span>Normalized</span></div>
+      <div class="visual-row"><span>Campaign A</span><b>Efficient</b></div>
+      <div class="visual-row"><span>Campaign B</span><b>Watch</b></div>
+      <div class="visual-row"><span>Campaign C</span><b>Scale</b></div>
+    </div>
+  </div>
+</div>
+          </div>
+        </section>
+
+        <section class="case-facts" aria-label="Project facts">
+          <div class="case-fact"><span>ROLE</span><strong>Data app design and development</strong></div>
+          <div class="case-fact"><span>FOCUS</span><strong>Advertising analytics</strong></div>
+          <div class="case-fact"><span>STATUS</span><strong>Interactive build</strong></div>
+          <div class="case-fact"><span>DELIVERY</span><strong>Reusable reporting workflow</strong></div>
+        </section>
+
+        <div class="case-layout">
+          <article class="case-content">
+            <section class="case-section">
+      <h2>The business problem</h2>
+      <p>Advertising data is often exported from different platforms in inconsistent formats. Teams spend time cleaning spreadsheets before they can answer simple questions about spend, revenue, ROAS, campaign performance and where budget should move next.</p>
+    </section>
+<section class="case-section">
+      <h2>What I built</h2>
+      <p>I built an interactive reporting application with Python, Streamlit and Plotly. The app transforms uploaded campaign data into a consistent analysis layer and presents decision-ready views through filters, KPI cards, charts and campaign tables.</p><ul><li>Campaign and date-range filtering.</li><li>Calculated performance metrics and channel comparisons.</li><li>Interactive trend charts and campaign-level drill-downs.</li><li>Reusable data-cleaning and transformation logic.</li><li>Clear empty, invalid-file and missing-column states.</li></ul>
+    </section>
+<section class="case-section">
+      <h2>Application architecture</h2>
+      <div class="flow-list"><div><span>01</span><strong>Input</strong><p>Campaign exports or prepared datasets enter through a controlled upload path.</p></div><div><span>02</span><strong>Normalize</strong><p>Server-side Python logic standardizes dates, numeric fields and naming differences.</p></div><div><span>03</span><strong>Calculate</strong><p>Reusable functions derive KPIs and grouped performance views.</p></div><div><span>04</span><strong>Present</strong><p>Streamlit and Plotly provide interactive filters, summaries and visual analysis.</p></div></div>
+    </section>
+<section class="case-section">
+      <h2>Reliability and data quality</h2>
+      <ul><li>Validate required columns before calculations run.</li><li>Handle blank values, numeric conversion and inconsistent date formats.</li><li>Keep metric calculations in one layer rather than repeating formulas in charts.</li><li>Use anonymized or sample data in public demonstrations.</li></ul>
+    </section>
+<section class="case-section">
+      <h2>Outcome</h2>
+      <p>The build converts a repetitive reporting task into a reusable internal product. Instead of manually rebuilding charts for every report, a user can load the latest data, apply filters and move directly to the campaigns that require action.</p>
+    </section>
+          </article>
+
+          <aside class="case-sidebar" aria-label="Technical summary">
+            <section class="side-card">
+              <span class="side-label">TECHNICAL TOOLKIT</span>
+              <div class="case-tags"><span>Python</span><span>Streamlit</span><span>Plotly</span><span>Data transformation</span><span>Interactive reporting</span><span>Validation</span></div>
+            </section>
+            <section class="side-card">
+              <span class="side-label">MY RESPONSIBILITIES</span>
+              <ul><li>Design the reporting workflow.</li><li>Normalize campaign data.</li><li>Implement KPI calculations.</li><li>Build interactive charts and filters.</li><li>Handle invalid and incomplete input.</li></ul>
+            </section>
+            <section class="side-card scope-card">
+              <span class="side-label">SCOPE NOTE</span>
+              <p>The public case study uses sample or anonymized campaign data. It describes a Python data application rather than claiming a TypeScript backend.</p>
+
+            </section>
+          </aside>
+        </div>
+
+        <section class="case-contact">
+          <div>
+            <span class="eyebrow">Have a similar workflow problem?</span>
+            <h2>Let us turn it into working software.</h2>
+          </div>
+          <div>
+            <p>Share the users, current process, major pain point and the result you need. I will help define a practical first build.</p>
+            <div class="actions">
+              <a class="button" href="mailto:dardtechsystems@outlook.com">Email me ↗</a>
+              <a class="button secondary" href="https://www.linkedin.com/in/harrison-madu-7555b3349">LinkedIn ↗</a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer wrap">
+        <p>Harrison Madu · Full-stack development &amp; business systems</p>
+        <div><a href="https://github.com/HarrisonMadu">GitHub</a><a href="https://www.linkedin.com/in/harrison-madu-7555b3349">LinkedIn</a><a href="mailto:dardtechsystems@outlook.com">Email</a></div>
+      </footer>
+    </body>
+    </html>
