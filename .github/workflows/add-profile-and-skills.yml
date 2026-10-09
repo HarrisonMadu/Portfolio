@@ -1,0 +1,265 @@
+name: Add profile and skills to portfolio
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/add-profile-and-skills.yml
+
+permissions:
+  contents: write
+
+jobs:
+  update-portfolio:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Add Harrison profile, experience and technical stack
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import base64
+          import re
+          import textwrap
+
+          ROOT = Path('.')
+          DOCS = ROOT / 'docs'
+          ASSETS = DOCS / 'assets'
+          ASSETS.mkdir(parents=True, exist_ok=True)
+
+          PHOTO_B64 = """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"""
+
+          photo = base64.b64decode(PHOTO_B64)
+          if len(photo) < 5000 or photo[:4] != b'RIFF' or photo[8:12] != b'WEBP':
+              raise RuntimeError('Profile image data is invalid')
+          (ASSETS / 'harrison-madu-profile.webp').write_bytes(photo)
+
+          def dedent(value):
+              return textwrap.dedent(value).strip()
+
+          def profile_section(photo_src):
+              return dedent(f'''
+              <!-- PROFILE-AND-SKILLS:START -->
+              <section class="section profile-section" id="about" aria-labelledby="about-title">
+                <div class="profile-grid">
+                  <figure class="profile-photo-card">
+                    <div class="profile-photo-wrap">
+                      <img src="{photo_src}" width="360" height="360" alt="Harrison Madu, full-stack engineer" loading="eager" decoding="async" />
+                      <div class="experience-chip" aria-label="Six years of professional experience"><strong>6</strong><span>years of<br />experience</span></div>
+                    </div>
+                    <figcaption><strong>Harrison Madu</strong><span>Full-stack engineer · Lagos, Nigeria</span></figcaption>
+                  </figure>
+
+                  <div class="profile-copy">
+                    <span class="eyebrow">About the engineer</span>
+                    <h2 id="about-title">Six years building software around real business workflows.</h2>
+                    <p>I am a full-stack engineer who designs and builds custom CRM, ERP, inventory, reporting, and business operations systems.</p>
+                    <p>My work covers product discovery, UI/UX implementation, responsive frontend development, backend APIs, PostgreSQL data modelling, authentication, permissions, testing, deployment, and post-launch improvement.</p>
+                    <p>I am strongest when a business process is difficult to track, spread across disconnected tools, or dependent on manual follow-up. I turn that process into secure software a team can use every day.</p>
+                    <div class="profile-highlights" aria-label="Professional strengths">
+                      <div><strong>End-to-end ownership</strong><span>From requirements and interface design to APIs, databases, testing, and delivery.</span></div>
+                      <div><strong>Business-first engineering</strong><span>Systems are shaped around the real workflow, users, controls, and reporting needs.</span></div>
+                      <div><strong>Remote collaboration</strong><span>Clear written updates, practical trade-offs, and dependable handover documentation.</span></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="skills-block" id="skills" aria-labelledby="skills-title">
+                  <div class="section-head skills-head">
+                    <div><span class="eyebrow">Skills and technologies</span><h3 id="skills-title">The tools I use to take a product from idea to production.</h3></div>
+                    <p>Grouped by the part of the product I am responsible for, not as an unfiltered list of buzzwords.</p>
+                  </div>
+                  <div class="skills-grid">
+                    <article class="skill-group">
+                      <span class="skill-number">01</span><h4>Frontend</h4>
+                      <p>Responsive interfaces and product experiences that remain clear across desktop and mobile.</p>
+                      <div class="skill-pills"><span>React</span><span>Next.js</span><span>TypeScript</span><span>JavaScript</span><span>HTML5</span><span>CSS3</span><span>Tailwind CSS</span><span>Responsive UI</span><span>UI/UX implementation</span></div>
+                    </article>
+                    <article class="skill-group">
+                      <span class="skill-number">02</span><h4>Backend and APIs</h4>
+                      <p>Application services, business rules, access boundaries, integrations, and reliable error handling.</p>
+                      <div class="skill-pills"><span>Node.js</span><span>NestJS</span><span>REST APIs</span><span>Authentication</span><span>RBAC</span><span>API integration</span><span>Server-side validation</span></div>
+                    </article>
+                    <article class="skill-group">
+                      <span class="skill-number">03</span><h4>Database and data</h4>
+                      <p>Structured data models, operational reporting, and practical analysis for business decisions.</p>
+                      <div class="skill-pills"><span>PostgreSQL</span><span>Prisma ORM</span><span>SQL</span><span>Database design</span><span>Data modelling</span><span>Python</span><span>Streamlit</span><span>Plotly</span><span>Power BI</span></div>
+                    </article>
+                    <article class="skill-group">
+                      <span class="skill-number">04</span><h4>Tools and delivery</h4>
+                      <p>Planning, collaboration, testing, version control, interface design, and controlled releases.</p>
+                      <div class="skill-pills"><span>Git</span><span>GitHub</span><span>Visual Studio Code</span><span>Postman</span><span>Figma</span><span>CI/CD workflows</span><span>GitHub Actions</span><span>Deployment support</span></div>
+                    </article>
+                  </div>
+                </div>
+              </section>
+              <!-- PROFILE-AND-SKILLS:END -->
+              ''')
+
+          nav = dedent('''
+          <nav aria-label="Main navigation">
+            <a href="#about">About</a><a href="#work">Selected work</a><a href="#skills">Skills</a><a href="#services">Services</a><a href="#contact">Let's talk ↗</a>
+          </nav>
+          ''')
+
+          for filename, photo_src in (
+              ('index.html', 'docs/assets/harrison-madu-profile.webp'),
+              ('docs/index.html', 'assets/harrison-madu-profile.webp'),
+          ):
+              path = ROOT / filename
+              text = path.read_text(encoding='utf-8')
+
+              text = re.sub(r'<title>.*?</title>', '<title>Harrison Madu | Full-Stack Engineer &amp; Business Systems Developer</title>', text, count=1, flags=re.S)
+              text = re.sub(
+                  r'<meta name="description" content=".*?"\s*/>',
+                  '<meta name="description" content="Harrison Madu is a full-stack engineer with 6 years of experience building custom CRM, ERP, inventory, reporting, and business operations systems." />',
+                  text,
+                  count=1,
+                  flags=re.S,
+              )
+              text = re.sub(
+                  r'<meta property="og:title" content=".*?"\s*/>',
+                  '<meta property="og:title" content="Harrison Madu | Full-Stack Engineer" />',
+                  text,
+                  count=1,
+                  flags=re.S,
+              )
+              text = re.sub(
+                  r'<meta property="og:description" content=".*?"\s*/>',
+                  '<meta property="og:description" content="Six years building CRM, ERP, inventory, reporting, and business operations software from interface to deployment." />',
+                  text,
+                  count=1,
+                  flags=re.S,
+              )
+              text = re.sub(r'<nav aria-label="Main navigation">.*?</nav>', nav, text, count=1, flags=re.S)
+              text = text.replace('Full-stack developer · Lagos, Nigeria', 'Full-stack engineer · 6 years experience · Lagos, Nigeria')
+
+              block = profile_section(photo_src)
+              marker_pattern = re.compile(r'\s*<!-- PROFILE-AND-SKILLS:START -->.*?<!-- PROFILE-AND-SKILLS:END -->', re.S)
+              if marker_pattern.search(text):
+                  text = marker_pattern.sub('\n' + block, text, count=1)
+              else:
+                  capabilities = re.compile(r'(<div class="capabilities"[^>]*>.*?</div>)', re.S)
+                  if not capabilities.search(text):
+                      raise RuntimeError(f'Could not locate capabilities block in {filename}')
+                  text = capabilities.sub(r'\1\n\n' + block, text, count=1)
+
+              text = text.replace('AI-assisted development tools', '')
+              path.write_text(text, encoding='utf-8')
+
+          css_path = DOCS / 'assets' / 'portfolio.css'
+          css = css_path.read_text(encoding='utf-8')
+          profile_css = dedent('''
+          /* PROFILE-AND-SKILLS:START */
+          .profile-section { padding-top: 78px; }
+          .profile-grid { display: grid; grid-template-columns: minmax(280px, .72fr) minmax(0, 1.28fr); gap: clamp(40px, 7vw, 92px); align-items: center; }
+          .profile-photo-card { margin: 0; }
+          .profile-photo-wrap { position: relative; max-width: 440px; padding: 13px; border: 1px solid var(--line); border-radius: 20px; background: var(--white); box-shadow: 0 24px 65px rgba(23, 77, 56, .12); }
+          .profile-photo-wrap::before { content: ''; position: absolute; inset: 26px -18px -18px 26px; z-index: -1; border-radius: 20px; background: #dce7d7; }
+          .profile-photo-wrap img { display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; border-radius: 13px; }
+          .profile-photo-card figcaption { display: flex; flex-direction: column; gap: 4px; padding-top: 21px; }
+          .profile-photo-card figcaption strong { font-size: 1.05rem; }
+          .profile-photo-card figcaption span { color: var(--muted); font-size: .79rem; }
+          .experience-chip { position: absolute; right: -20px; bottom: 24px; min-width: 132px; padding: 13px 16px; display: flex; align-items: center; gap: 10px; border: 1px solid #6e947c; border-radius: 10px; background: var(--green); color: white; box-shadow: 0 14px 35px rgba(20, 57, 43, .24); }
+          .experience-chip strong { font: 2.3rem/1 Georgia, serif; }
+          .experience-chip span { font-size: .66rem; font-weight: 700; line-height: 1.2; letter-spacing: .06em; text-transform: uppercase; }
+          .profile-copy h2 { margin-top: 13px; max-width: 780px; font-size: clamp(2.35rem, 4.6vw, 4.25rem); }
+          .profile-copy > p { max-width: 790px; margin-top: 17px; color: var(--muted); font-size: 1rem; }
+          .profile-highlights { display: grid; grid-template-columns: repeat(3, 1fr); gap: 11px; margin-top: 30px; }
+          .profile-highlights > div { min-width: 0; padding: 17px; border: 1px solid var(--line); border-radius: 9px; background: var(--white); }
+          .profile-highlights strong, .profile-highlights span { display: block; }
+          .profile-highlights strong { color: var(--green); font-size: .78rem; }
+          .profile-highlights span { margin-top: 7px; color: var(--muted); font-size: .72rem; line-height: 1.5; }
+          .skills-block { scroll-margin-top: 22px; margin-top: 88px; padding-top: 62px; border-top: 1px solid var(--line); }
+          .skills-head h3 { margin-top: 10px; max-width: 800px; font-size: clamp(2rem, 3.5vw, 3.2rem); }
+          .skills-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+          .skill-group { min-width: 0; padding: 25px; border: 1px solid var(--line); border-radius: 12px; background: var(--white); }
+          .skill-number { color: #8a978e; font-size: .65rem; }
+          .skill-group h4 { margin-top: 24px; font-size: 1.4rem; }
+          .skill-group > p { margin-top: 10px; color: var(--muted); font-size: .8rem; max-width: 530px; }
+          .skill-pills { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 21px; }
+          .skill-pills span { padding: 6px 9px; border: 1px solid #d8dfd4; border-radius: 4px; background: #f7f7f0; color: #405048; font-size: .68rem; }
+          #about, #skills { scroll-margin-top: 24px; }
+          @media (max-width: 980px) {
+            .profile-grid { grid-template-columns: minmax(240px, .65fr) 1.35fr; gap: 40px; }
+            .profile-highlights { grid-template-columns: 1fr; }
+          }
+          @media (max-width: 760px) {
+            .profile-section { padding-top: 56px; }
+            .profile-grid { grid-template-columns: 1fr; }
+            .profile-photo-card { max-width: 390px; }
+            .profile-photo-wrap::before { inset: 20px -10px -10px 20px; }
+            .experience-chip { right: -7px; bottom: 18px; }
+            .profile-copy h2 { font-size: clamp(2.25rem, 11vw, 3.35rem); }
+            .skills-block { margin-top: 64px; padding-top: 48px; }
+            .skills-grid { grid-template-columns: 1fr; }
+          }
+          /* PROFILE-AND-SKILLS:END */
+          ''')
+          css_pattern = re.compile(r'/\* PROFILE-AND-SKILLS:START \*/.*?/\* PROFILE-AND-SKILLS:END \*/', re.S)
+          if css_pattern.search(css):
+              css = css_pattern.sub(profile_css, css, count=1)
+          else:
+              css = css.rstrip() + '\n\n' + profile_css + '\n'
+          css_path.write_text(css, encoding='utf-8')
+
+          readme_path = ROOT / 'README.md'
+          readme = readme_path.read_text(encoding='utf-8')
+          readme = re.sub(
+              r'# Harrison Madu\n(?:\n<img[^>]+>\n)?',
+              '# Harrison Madu\n\n<img src="docs/assets/harrison-madu-profile.webp" alt="Harrison Madu, full-stack engineer" width="180" />\n',
+              readme,
+              count=1,
+          )
+          readme = readme.replace(
+              'Full-stack developer. I build custom ERP, CRM, and inventory systems for businesses that are losing money to poor tracking, missing stock, and cash leakage.',
+              'Full-stack engineer with 6 years of professional experience. I build custom ERP, CRM, inventory, reporting, and business operations systems for organizations that need better control of their workflows and data.',
+          )
+          new_stack = dedent('''
+          ## Skills and technologies
+
+          - **Frontend:** React, Next.js, TypeScript, JavaScript, HTML5, CSS3, Tailwind CSS, responsive UI, and UI/UX implementation.
+          - **Backend and APIs:** Node.js, NestJS, REST APIs, authentication, role-based access control, API integrations, and server-side validation.
+          - **Database and data:** PostgreSQL, Prisma ORM, SQL, database design, data modelling, Python, Streamlit, Plotly, and Power BI.
+          - **Tools and delivery:** Git, GitHub, Visual Studio Code, Postman, Figma, CI/CD workflows, GitHub Actions, and deployment support.
+          ''')
+          readme = re.sub(r'## Stack\n\n.*?\n\n## Selected work', new_stack + '\n\n## Selected work', readme, count=1, flags=re.S)
+          readme = readme.replace('AI-assisted development tools', '')
+          readme_path.write_text(readme, encoding='utf-8')
+
+          required = [
+              ASSETS / 'harrison-madu-profile.webp',
+              ROOT / 'index.html',
+              DOCS / 'index.html',
+              DOCS / 'assets' / 'portfolio.css',
+              ROOT / 'README.md',
+          ]
+          for file in required:
+              if not file.exists() or file.stat().st_size < 100:
+                  raise RuntimeError(f'Missing or incomplete output: {file}')
+
+          for filename in ('index.html', 'docs/index.html'):
+              text = (ROOT / filename).read_text(encoding='utf-8')
+              for phrase in ('Six years building software', 'Skills and technologies', 'harrison-madu-profile.webp'):
+                  if phrase not in text:
+                      raise RuntimeError(f'{filename} is missing required content: {phrase}')
+              if 'AI-assisted development tools' in text:
+                  raise RuntimeError(f'{filename} still contains removed wording')
+          PY
+
+      - name: Commit portfolio profile update
+        shell: bash
+        run: |
+          rm -f .github/workflows/add-profile-and-skills.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --check
+          git commit -m "Add professional profile and technology stack"
+          git push origin HEAD:main
