@@ -71,11 +71,12 @@ Implementation and integration work across order management, grouped product pri
 - **Focus:** Sales and POS, inventory, branch reporting, and executive visibility.
 - **Status:** Development build.
 
-### More work
+### More full-stack and product case studies
 
-- **CEO dashboard** — executive view of capital, burn, receivables, runway, and product performance, with widgets the user can show, hide, and reorder.
-- **Ad performance dashboard** — interactive ad-reporting demo with sample data, built with Python, Streamlit, and Plotly.
-- **Buy&Use and SupremeLife** — UX case studies for conversion-focused product pages.
+- **[CEO Dashboard](https://harrisonmadu.github.io/Portfolio/projects/ceo-dashboard/)** — configurable executive reporting for capital, burn, receivables, runway, and product performance.
+- **[Ad Performance Dashboard](https://harrisonmadu.github.io/Portfolio/projects/ad-performance-dashboard/)** — interactive Python, Streamlit, and Plotly reporting application.
+- **[Buy and Use Commerce Experience](https://harrisonmadu.github.io/Portfolio/projects/buy-and-use/)** — responsive product journey, order capture, and commerce-workflow integration.
+- **[SupremeLife Commerce Experience](https://harrisonmadu.github.io/Portfolio/projects/supremelife/)** — responsive product page, form behaviour, and customer-to-operations handoff.
 
 ## How we can work together
 

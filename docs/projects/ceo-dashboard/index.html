@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <title>CEO Dashboard case study | Harrison Madu</title>
+      <meta name="description" content="A configurable executive workspace for capital, operating burn, receivables, runway and product performance." />
+      <meta name="theme-color" content="#174d38" />
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content="CEO Dashboard case study | Harrison Madu" />
+      <meta property="og:description" content="A configurable executive workspace for capital, operating burn, receivables, runway and product performance." />
+      <meta property="og:url" content="https://harrisonmadu.github.io/Portfolio/projects/ceo-dashboard/" />
+      <link rel="canonical" href="https://harrisonmadu.github.io/Portfolio/projects/ceo-dashboard/" />
+      <link rel="stylesheet" href="../../assets/portfolio.css" />
+      <link rel="stylesheet" href="../../assets/case-study.css" />
+    </head>
+    <body>
+      <a class="skip-link" href="#case-main">Skip to case study</a>
+      <header class="site-header wrap">
+        <a class="brand" href="/Portfolio/"><span class="monogram" aria-hidden="true">HM</span> Harrison Madu</a>
+        <nav aria-label="Case study navigation">
+          <a href="/Portfolio/#work">Selected work</a>
+          <a href="/Portfolio/#services">Services</a>
+          <a href="/Portfolio/#contact">Contact</a>
+        </nav>
+      </header>
+
+      <main class="wrap case-main" id="case-main">
+        <a class="back-link" href="/Portfolio/#more-work">← Back to additional work</a>
+
+        <section class="case-hero">
+          <div class="case-hero-copy">
+            <span class="eyebrow">EXECUTIVE ANALYTICS · PRODUCT MODULE</span>
+            <div class="case-badges"><span>Development build</span><span>Executive reporting</span></div>
+            <h1>CEO Dashboard</h1>
+            <p class="case-summary">A configurable executive workspace for capital, operating burn, receivables, runway and product performance.</p>
+            <div class="actions">
+              <a class="button" href="mailto:dardtechsystems@outlook.com?subject=CEO%20Dashboard%20project%20enquiry">Discuss a similar build ↗</a>
+              <a class="button secondary" href="/Portfolio/#work">View all work</a>
+            </div>
+          </div>
+          <div class="case-visual" aria-label="Illustrative interface preview">
+            <div class="visual-window visual-window-dark">
+  <div class="visual-toolbar"><strong>Executive overview</strong><span>Last 90 days</span></div>
+  <div class="visual-metrics">
+    <div class="visual-metric"><small>Capital position</small><b>••••••</b><i>Consolidated</i></div>
+    <div class="visual-metric"><small>Operating burn</small><b>••••••</b><i>Monthly trend</i></div>
+    <div class="visual-metric"><small>Receivables</small><b>••••••</b><i>Action required</i></div>
+    <div class="visual-metric"><small>Runway</small><b>•• months</b><i>Scenario view</i></div>
+  </div>
+  <div class="visual-grid">
+    <div class="visual-panel">
+      <div class="visual-panel-head"><strong>Performance trend</strong><span>Revenue · burn</span></div>
+      <div class="visual-chart" aria-hidden="true"><span style="height:34%"></span><span style="height:45%"></span><span style="height:39%"></span><span style="height:58%"></span><span style="height:67%"></span><span style="height:63%"></span><span style="height:82%"></span></div>
+    </div>
+    <div class="visual-panel visual-list">
+      <div class="visual-panel-head"><strong>Product view</strong><span>Configurable</span></div>
+      <div class="visual-row"><span>Product group A</span><b>Healthy</b></div>
+      <div class="visual-row"><span>Product group B</span><b>Review</b></div>
+      <div class="visual-row"><span>Product group C</span><b>Growing</b></div>
+    </div>
+  </div>
+</div>
+          </div>
+        </section>
+
+        <section class="case-facts" aria-label="Project facts">
+          <div class="case-fact"><span>ROLE</span><strong>Product design, frontend and data contracts</strong></div>
+          <div class="case-fact"><span>FOCUS</span><strong>Executive reporting</strong></div>
+          <div class="case-fact"><span>STATUS</span><strong>Development build</strong></div>
+          <div class="case-fact"><span>DELIVERY</span><strong>Iterative product build</strong></div>
+        </section>
+
+        <div class="case-layout">
+          <article class="case-content">
+            <section class="case-section">
+      <h2>The business problem</h2>
+      <p>Senior leaders often receive financial and operational information through separate spreadsheets, chat messages and delayed reports. That makes it difficult to understand capital position, operating burn, receivables, runway and product performance from one reliable view.</p>
+    </section>
+<section class="case-section">
+      <h2>What I built</h2>
+      <p>I designed and built a configurable executive dashboard that turns high-level business questions into clear reporting modules. Users can show, hide and reorder widgets so the workspace reflects the decisions they make most often.</p><ul><li>Executive KPI cards for financial and operational signals.</li><li>Trend views for changes over time, not only static totals.</li><li>Product-performance summaries and exception-focused reporting.</li><li>Widget visibility and ordering controls for a personalized owner view.</li><li>Responsive loading, empty, error and restricted-access states.</li></ul>
+    </section>
+<section class="case-section">
+      <h2>Full-stack build approach</h2>
+      <div class="layer-list"><div><strong>Presentation layer</strong><p>Reusable React and TypeScript dashboard components, responsive layouts and accessible interaction states.</p></div><div><strong>Application layer</strong><p>Normalized date, filter and widget state so reporting behaviour stays predictable across the interface.</p></div><div><strong>Data contracts</strong><p>Clear metric definitions and API-ready payload shapes for capital, burn, receivables, runway and product reporting.</p></div><div><strong>Access boundary</strong><p>The module is designed for role-scoped executive access instead of exposing sensitive reporting to every user.</p></div></div>
+    </section>
+<section class="case-section">
+      <h2>Key engineering decisions</h2>
+      <ul><li>Keep metric definitions stable so the same number means the same thing everywhere.</li><li>Separate dashboard presentation from raw data sources to make integrations replaceable.</li><li>Use configurable widgets without allowing personalization to alter source-of-truth calculations.</li><li>Prioritize exceptions and decisions instead of filling the screen with every available data point.</li></ul>
+    </section>
+<section class="case-section">
+      <h2>Validation and outcome</h2>
+      <p>Validation focused on responsive behaviour, widget persistence, filter consistency, restricted states and data-format edge cases. The result is a clearer owner-facing product that reduces the time required to assemble a management view and makes important changes easier to identify.</p>
+    </section>
+          </article>
+
+          <aside class="case-sidebar" aria-label="Technical summary">
+            <section class="side-card">
+              <span class="side-label">TECHNICAL TOOLKIT</span>
+              <div class="case-tags"><span>TypeScript</span><span>React</span><span>Next.js</span><span>Dashboard architecture</span><span>API contracts</span><span>Responsive UI</span></div>
+            </section>
+            <section class="side-card">
+              <span class="side-label">MY RESPONSIBILITIES</span>
+              <ul><li>Translate executive questions into product requirements.</li><li>Design information hierarchy and reusable widgets.</li><li>Build responsive dashboard interactions.</li><li>Define metric and integration contracts.</li><li>Validate restricted, empty and error states.</li></ul>
+            </section>
+            <section class="side-card scope-card">
+              <span class="side-label">SCOPE NOTE</span>
+              <p>Public visuals use masked or representative values. The case study focuses on the product module, reporting architecture and integration boundaries.</p>
+
+            </section>
+          </aside>
+        </div>
+
+        <section class="case-contact">
+          <div>
+            <span class="eyebrow">Have a similar workflow problem?</span>
+            <h2>Let us turn it into working software.</h2>
+          </div>
+          <div>
+            <p>Share the users, current process, major pain point and the result you need. I will help define a practical first build.</p>
+            <div class="actions">
+              <a class="button" href="mailto:dardtechsystems@outlook.com">Email me ↗</a>
+              <a class="button secondary" href="https://www.linkedin.com/in/harrison-madu-7555b3349">LinkedIn ↗</a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer wrap">
+        <p>Harrison Madu · Full-stack development &amp; business systems</p>
+        <div><a href="https://github.com/HarrisonMadu">GitHub</a><a href="https://www.linkedin.com/in/harrison-madu-7555b3349">LinkedIn</a><a href="mailto:dardtechsystems@outlook.com">Email</a></div>
+      </footer>
+    </body>
+    </html>

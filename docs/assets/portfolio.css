@@ -130,3 +130,17 @@ summary { cursor: pointer; color: var(--green); font-size: .83rem; font-weight: 
   .coming-soon { display: block; margin: 8px 0 0; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+/* CASE-STUDY-CARDS:START */
+.more-work-section { margin-top: 58px; padding-top: 68px; border-top: 1px solid var(--line); }
+.more-work-head { margin-bottom: 30px; }
+.more-work-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.more-work-card { min-width: 0; min-height: 280px; padding: 25px; display: flex; flex-direction: column; border: 1px solid var(--line); border-radius: 12px; background: var(--white); color: var(--ink); text-decoration: none; transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease; }
+.more-work-card:hover { transform: translateY(-3px); border-color: #9fb59d; box-shadow: 0 18px 45px rgba(23,77,56,.09); }
+.more-work-number { color: #8b978e; font-size: .66rem; }
+.more-work-type { margin-top: 28px; color: var(--green); font-size: .63rem; font-weight: 700; letter-spacing: .11em; text-transform: uppercase; }
+.more-work-card h3 { margin-top: 12px; font-size: 1.75rem; }
+.more-work-card p { margin-top: 13px; color: var(--muted); font-size: .88rem; max-width: 480px; }
+.more-work-link { margin-top: auto; padding-top: 28px; color: var(--green); font-size: .78rem; font-weight: 700; }
+@media (max-width: 720px) { .more-work-grid { grid-template-columns: 1fr; } .more-work-card { min-height: 245px; } }
+/* CASE-STUDY-CARDS:END */
