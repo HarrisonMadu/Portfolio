@@ -1,0 +1,67 @@
+name: Publish portfolio case-study routes
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/publish-case-study-routes.yml
+
+permissions:
+  contents: write
+
+jobs:
+  publish-routes:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Copy case studies to the GitHub Pages root
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          slugs = (
+              'ceo-dashboard',
+              'ad-performance-dashboard',
+              'buy-and-use',
+              'supremelife',
+          )
+
+          for slug in slugs:
+              source = Path('docs/projects') / slug / 'index.html'
+              target = Path('projects') / slug / 'index.html'
+
+              if not source.is_file():
+                  raise RuntimeError(f'Missing source page: {source}')
+
+              html = source.read_text(encoding='utf-8')
+              html = html.replace(
+                  'href="../../assets/portfolio.css"',
+                  'href="../../docs/assets/portfolio.css"',
+              ).replace(
+                  'href="../../assets/case-study.css"',
+                  'href="../../docs/assets/case-study.css"',
+              )
+
+              target.parent.mkdir(parents=True, exist_ok=True)
+              target.write_text(html, encoding='utf-8')
+
+              if target.stat().st_size < 500:
+                  raise RuntimeError(f'Generated page is incomplete: {target}')
+          PY
+
+      - name: Commit corrected routes
+        shell: bash
+        run: |
+          rm -f .github/workflows/publish-case-study-routes.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --check
+          git commit -m "Publish case studies at live portfolio routes"
+          git push origin HEAD:main
