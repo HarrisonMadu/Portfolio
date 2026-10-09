@@ -6,7 +6,7 @@ Full-stack developer. I build custom ERP, CRM, and inventory systems for busines
 
 I design the interface, build the backend, and hand over a system a team can use daily: sales, stock, customers, and reports in one place.
 
-[Explore my portfolio](https://harrisonmadu.github.io/Portfolio/) · [Discuss your project](mailto:harrysoninno@gmail.com)
+[Explore my portfolio](https://harrisonmadu.github.io/Portfolio/) · [Discuss your project](mailto:dardtechsystems@outlook.com)
 
 ## What I build
 
@@ -90,8 +90,8 @@ For a first conversation, share your business type, the workflow problem, key fe
 
 ## Contact
 
-- Email: [harrysoninno@gmail.com](mailto:harrysoninno@gmail.com)
+- Email: [dardtechsystems@outlook.com](mailto:dardtechsystems@outlook.com)
 - GitHub: https://github.com/HarrisonMadu
-- LinkedIn: https://linkedin.com/in/harrisonmadu
+- LinkedIn: https://www.linkedin.com/in/harrison-madu-7555b3349
 - X: [@smaldard](https://x.com/smaldard)
 - **Hire me on Fiverr:** Profile coming soon. For projects started on Fiverr, communication and payments stay on Fiverr.
