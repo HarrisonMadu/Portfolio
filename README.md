@@ -27,33 +27,33 @@ Next.js, React, Node.js, TypeScript, PostgreSQL, SQL, Python, Power BI
 
 A shared workspace for vehicle stock, import logistics, reservations, sales, and finance.
 
-[![Dera Auto dashboard mockup with inventory, commerce, operations, and vehicle movement panels](docs/assets/projects/dera-auto-dashboard.png)](docs/assets/projects/dera-auto-dashboard.png)
+[![Dera Auto deployed dashboard with inventory, commerce, operations, and vehicle movement panels](docs/assets/projects/dera-auto-dashboard.png)](docs/assets/projects/dera-auto-dashboard.png)
 
-*Anonymized interface mockup based on the development build. Internal values and identifiers are masked.*
+*Anonymized screenshot from the deployed system. Internal values and identifiers are masked.*
 
 - **Problem:** Connect each vehicle's purchase, shipping, clearing, warehouse placement, and eventual sale with its costs and payments.
 - **What I built:** VIN-based stock records, movement tracking, reservations, payment and approval workflows, a vehicle media vault, and a customizable dashboard.
 - **Stack:** Next.js, React, TypeScript, PostgreSQL, Prisma.
-- **Status:** Development build.
+- **Status:** Deployed.
 
 ### SupreTek Suite CRM — business operations platform
 
 Implementation and integration work across order management, grouped product pricing, customer records, and business reporting.
 
-[![SupreTek Suite CRM dashboard mockup with order widgets, summaries, and reporting charts](docs/assets/projects/supretek-suite-dashboard.png)](docs/assets/projects/supretek-suite-dashboard.png)
+[![SupreTek Suite CRM deployed dashboard with order widgets, summaries, and reporting charts](docs/assets/projects/supretek-suite-dashboard.png)](docs/assets/projects/supretek-suite-dashboard.png)
 
-*Anonymized interface mockup based on the development build. Internal values and identifiers are masked.*
+*Anonymized screenshot from the deployed system. Internal values and identifiers are masked.*
 
 - **Problem:** Give sales and operations teams a consistent view of orders, customers, product offers, and business reporting.
 - **My work:** Connect the existing CRM interface to a NestJS and PostgreSQL backend, with work across order status filters, product pricing groups, customer records, and configurable business dashboards.
 - **Stack:** React, TypeScript, NestJS, PostgreSQL, Prisma.
-- **Status:** In development.
+- **Status:** Deployed.
 
 ### Rock Foundation College — school management system
 
 [![Rock Foundation College school management dashboard with students, fee collection, pending fees, and sample payment records](docs/assets/projects/rock-foundation-college-dashboard.png)](docs/assets/projects/rock-foundation-college-dashboard.png)
 
-*Anonymized interface mockup based on the development build. Sample data is used.*
+*Portfolio-safe screenshot from the development build. Sensitive values and identifiers are masked.*
 
 - **Problem:** Give school leaders a clear view of student records, fees collected, outstanding balances, and academic administration.
 - **What I built:** Student records, fee and payment tracking, outstanding-fee visibility, report-card access, and parent communication workflows.
@@ -64,7 +64,7 @@ Implementation and integration work across order management, grouped product pri
 
 [![Buy and Use retail operations dashboard with sample branch sales, inventory, POS activity, and stock alerts](docs/assets/projects/buy-and-use-dashboard.png)](docs/assets/projects/buy-and-use-dashboard.png)
 
-*Anonymized interface mockup based on the development build. Sample data is used.*
+*Portfolio-safe screenshot from the development build. Sensitive values and identifiers are masked.*
 
 - **Problem:** Connect sales activity with branch performance, stock availability, shrinkage, and approaching expiry dates.
 - **What I built:** Sales recording, stock updates, low-stock and expiry alerts, and branch performance reporting.
