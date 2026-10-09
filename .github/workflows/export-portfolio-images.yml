@@ -1,0 +1,29 @@
+name: Export portfolio images
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/export-portfolio-images.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  export-images:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Package portfolio images
+        uses: actions/upload-artifact@v4
+        with:
+          name: portfolio-project-images
+          path: |
+            docs/assets/projects/school-management-executive.png
+            docs/assets/projects/retailos-executive.png
+          if-no-files-found: error
+          retention-days: 1
