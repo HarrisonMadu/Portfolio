@@ -15,7 +15,7 @@ I design the interface, build the backend, and hand over a system a team can use
 - ERP modules for operations and reporting
 - Dashboards for cash, sales, and performance
 - Web apps from frontend to backend
-- School-management interfaces and executive dashboards
+- School-management systems and executive dashboards
 
 ## Stack
 
@@ -49,25 +49,27 @@ Implementation and integration work across order management, grouped product pri
 - **Stack:** React, TypeScript, NestJS, PostgreSQL, Prisma.
 - **Status:** In development.
 
-### School Management — executive dashboard concept
+### Rock Foundation College — school management system
 
-[![SchoolOS executive concept with students, fee collection, pending fees, and sample payment records](docs/assets/projects/school-management-executive.png)](docs/assets/projects/school-management-executive.png)
+[![Rock Foundation College school management dashboard with students, fee collection, pending fees, and sample payment records](docs/assets/projects/school-management-executive.png)](docs/assets/projects/school-management-executive.png)
 
-*Concept mockup with sample data; not a live school deployment.*
+*Anonymized interface mockup based on the development build. Sample data is used.*
 
 - **Problem:** Give school leaders a clear view of student records, fees collected, outstanding balances, and academic administration.
-- **Proposed workflow:** Student record → fee/payment record → outstanding-fee overview, with access to report cards and parent communication.
-- **Focus:** Executive visibility, fee collection, student administration, and interface design.
+- **What I built:** Student records, fee and payment tracking, outstanding-fee visibility, report-card access, and parent communication workflows.
+- **Focus:** Executive visibility, fee collection, student administration, and operational reporting.
+- **Status:** Development build.
 
-### RetailOS — retail operations concept
+### Buy and Use — retail operations system
 
-[![RetailOS executive concept with sample branch sales, inventory, POS activity, and stock alerts](docs/assets/projects/retailos-executive.png)](docs/assets/projects/retailos-executive.png)
+[![Buy and Use retail operations dashboard with sample branch sales, inventory, POS activity, and stock alerts](docs/assets/projects/retailos-executive.png)](docs/assets/projects/retailos-executive.png)
 
-*Concept mockup with sample data; not a live retail deployment.*
+*Anonymized interface mockup based on the development build. Sample data is used.*
 
 - **Problem:** Connect sales activity with branch performance, stock availability, shrinkage, and approaching expiry dates.
-- **Proposed workflow:** Record a sale → update stock → surface low-stock or expiry alerts → review performance by branch.
-- **Focus:** Sales and POS, inventory, branch reporting, and interface design.
+- **What I built:** Sales recording, stock updates, low-stock and expiry alerts, and branch performance reporting.
+- **Focus:** Sales and POS, inventory, branch reporting, and executive visibility.
+- **Status:** Development build.
 
 ### More work
 
