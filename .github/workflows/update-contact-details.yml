@@ -1,0 +1,82 @@
+name: Update portfolio contact details
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/update-contact-details.yml
+
+permissions:
+  contents: write
+
+jobs:
+  update-contact-details:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Replace email and LinkedIn profile
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          files = [Path('README.md'), Path('index.html'), Path('docs/index.html')]
+          old_email = 'harrysoninno@gmail.com'
+          new_email = 'dardtechsystems@outlook.com'
+          new_linkedin = 'https://www.linkedin.com/in/harrison-madu-7555b3349'
+          old_linkedin_variants = [
+              'https://linkedin.com/in/harrisonmadu',
+              'https://www.linkedin.com/in/harrisonmadu',
+              'https://linkedin.com/in/harrison-madu',
+              'https://www.linkedin.com/in/harrison-madu',
+          ]
+
+          email_replacements = 0
+          linkedin_replacements = 0
+
+          for path in files:
+              if not path.is_file():
+                  raise FileNotFoundError(f'Required file not found: {path}')
+
+              text = path.read_text(encoding='utf-8')
+              email_replacements += text.count(old_email)
+              text = text.replace(old_email, new_email)
+
+              for old_linkedin in old_linkedin_variants:
+                  linkedin_replacements += text.count(old_linkedin)
+                  text = text.replace(old_linkedin, new_linkedin)
+
+              path.write_text(text, encoding='utf-8')
+
+          if email_replacements < 1:
+              raise RuntimeError('No existing portfolio email address was found to replace.')
+          if linkedin_replacements < 1:
+              raise RuntimeError('No existing LinkedIn profile URL was found to replace.')
+
+          for path in files:
+              text = path.read_text(encoding='utf-8')
+              if old_email in text:
+                  raise RuntimeError(f'Old email remains in {path}')
+              for old_linkedin in old_linkedin_variants:
+                  if old_linkedin in text:
+                      raise RuntimeError(f'Old LinkedIn URL remains in {path}: {old_linkedin}')
+
+          print(f'Updated {email_replacements} email occurrence(s).')
+          print(f'Updated {linkedin_replacements} LinkedIn occurrence(s).')
+          PY
+
+      - name: Commit contact updates
+        shell: bash
+        run: |
+          rm -f .github/workflows/update-contact-details.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --check
+          git commit -m "Update portfolio email and LinkedIn profile"
+          git push origin HEAD:main
