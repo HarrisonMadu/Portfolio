@@ -28,13 +28,8 @@ jobs:
           files = [Path('README.md'), Path('index.html'), Path('docs/index.html')]
           old_email = 'harrysoninno@gmail.com'
           new_email = 'dardtechsystems@outlook.com'
+          old_linkedin = 'https://linkedin.com/in/harrisonmadu'
           new_linkedin = 'https://www.linkedin.com/in/harrison-madu-7555b3349'
-          old_linkedin_variants = [
-              'https://linkedin.com/in/harrisonmadu',
-              'https://www.linkedin.com/in/harrisonmadu',
-              'https://linkedin.com/in/harrison-madu',
-              'https://www.linkedin.com/in/harrison-madu',
-          ]
 
           email_replacements = 0
           linkedin_replacements = 0
@@ -45,12 +40,9 @@ jobs:
 
               text = path.read_text(encoding='utf-8')
               email_replacements += text.count(old_email)
+              linkedin_replacements += text.count(old_linkedin)
               text = text.replace(old_email, new_email)
-
-              for old_linkedin in old_linkedin_variants:
-                  linkedin_replacements += text.count(old_linkedin)
-                  text = text.replace(old_linkedin, new_linkedin)
-
+              text = text.replace(old_linkedin, new_linkedin)
               path.write_text(text, encoding='utf-8')
 
           if email_replacements < 1:
@@ -62,9 +54,14 @@ jobs:
               text = path.read_text(encoding='utf-8')
               if old_email in text:
                   raise RuntimeError(f'Old email remains in {path}')
-              for old_linkedin in old_linkedin_variants:
-                  if old_linkedin in text:
-                      raise RuntimeError(f'Old LinkedIn URL remains in {path}: {old_linkedin}')
+              if old_linkedin in text:
+                  raise RuntimeError(f'Old LinkedIn URL remains in {path}')
+
+          combined = '\n'.join(path.read_text(encoding='utf-8') for path in files)
+          if combined.count(new_email) < email_replacements:
+              raise RuntimeError('The new email was not written everywhere expected.')
+          if combined.count(new_linkedin) < linkedin_replacements:
+              raise RuntimeError('The new LinkedIn URL was not written everywhere expected.')
 
           print(f'Updated {email_replacements} email occurrence(s).')
           print(f'Updated {linkedin_replacements} LinkedIn occurrence(s).')
