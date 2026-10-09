@@ -1,8 +1,10 @@
 # Harrison Madu
 
+<img src="docs/assets/harrison-madu-profile.webp" alt="Harrison Madu, full-stack engineer" width="180" />
+
 **Know what sold. What's in stock. Where the money went.**
 
-Full-stack developer. I build custom ERP, CRM, and inventory systems for businesses that are losing money to poor tracking, missing stock, and cash leakage.
+Full-stack engineer with 6 years of professional experience. I build custom ERP, CRM, inventory, reporting, and business operations systems for organizations that need better control of their workflows and data.
 
 I design the interface, build the backend, and hand over a system a team can use daily: sales, stock, customers, and reports in one place.
 
@@ -17,9 +19,12 @@ I design the interface, build the backend, and hand over a system a team can use
 - Web apps from frontend to backend
 - School-management systems and executive dashboards
 
-## Stack
+## Skills and technologies
 
-Next.js, React, Node.js, TypeScript, PostgreSQL, SQL, Python, Power BI
+- **Frontend:** React, Next.js, TypeScript, JavaScript, HTML5, CSS3, Tailwind CSS, responsive UI, and UI/UX implementation.
+- **Backend and APIs:** Node.js, NestJS, REST APIs, authentication, role-based access control, API integrations, and server-side validation.
+- **Database and data:** PostgreSQL, Prisma ORM, SQL, database design, data modelling, Python, Streamlit, Plotly, and Power BI.
+- **Tools and delivery:** Git, GitHub, Visual Studio Code, Postman, Figma, CI/CD workflows, GitHub Actions, and deployment support.
 
 ## Selected work
 
